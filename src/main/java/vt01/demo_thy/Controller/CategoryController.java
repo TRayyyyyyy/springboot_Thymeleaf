@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @Controller
-@RequestMapping("admin/category")
+@RequestMapping("/admin/category")
 public class CategoryController {
     @Autowired
     ICategoryService categoryService;
@@ -42,8 +42,8 @@ public class CategoryController {
         return "admin/categories/add";
     }
 
-    @PostMapping("/saveadd")
-    public String saveadd(CategoryEntity category, BindingResult result, Model model){
+    @PostMapping("/saveOfAdd")
+    public String saveOfAdd(CategoryEntity category, BindingResult result, Model model){
         if (result.hasErrors()) {
             return "admin/categories/add";
         }
@@ -59,7 +59,7 @@ public class CategoryController {
         return "admin/categories/edit";
     }
 
-    @PostMapping("/saveEdit/{id}")
+    @PostMapping("/saveOfEdit/{id}")
     public String update(@PathVariable("id") long id,CategoryEntity category, BindingResult result,
                          Model model){
         if (result.hasErrors()){

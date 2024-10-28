@@ -1,4 +1,4 @@
-<form action="#" th:action="@{/admin/category/edit/{id}(id=${category.categoryId})}" th:object="${category}" method="post">
+<form action="#" th:action="@{/admin/category/saveOfEdit/{id}(id=${category.categoryId})}" th:object="${category}" method="post">
     <label for="name">Name</label>
     <input type="text" th:field="*{categoryName}" id="name" placeholder="Name">
     <span th:if="${#fields.hasErrors('categoryName')}" th:errors="*{categoryName}"></span>

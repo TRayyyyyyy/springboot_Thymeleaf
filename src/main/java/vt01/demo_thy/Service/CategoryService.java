@@ -4,6 +4,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 import vt01.demo_thy.Entity.CategoryEntity;
 import vt01.demo_thy.Respository.CategoryRepository;
 import vt01.demo_thy.imp.ICategoryService;
@@ -11,6 +12,7 @@ import vt01.demo_thy.imp.ICategoryService;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CategoryService implements ICategoryService {
     CategoryRepository categoryRepository;
 
@@ -20,32 +22,32 @@ public class CategoryService implements ICategoryService {
 
     @Override
     public void delete(CategoryEntity entity) {
-
+        categoryRepository.delete(entity);
     }
 
     @Override
     public void deleteById(Long id) {
-
+      categoryRepository.deleteById(id);
     }
 
     @Override
     public long count() {
-        return 0;
+        return categoryRepository.count();
     }
 
     @Override
     public <S extends CategoryEntity> Optional<S> findOne(Example<S> example) {
-        return Optional.empty();
+        return categoryRepository.findOne(example);
     }
 
     @Override
     public Optional<CategoryEntity> findById(Long id) {
-        return Optional.empty();
+        return categoryRepository.findById(id);
     }
 
     @Override
     public List<CategoryEntity> findAllById(Iterable<Long> ids) {
-        return List.of();
+        return categoryRepository.findAllById(ids);
     }
 
     @Override
@@ -65,12 +67,12 @@ public class CategoryService implements ICategoryService {
 
     @Override
     public Optional<CategoryEntity> findByCategoryName(String name) {
-        return Optional.empty();
+        return categoryRepository.findByCategoryName(name);
     }
 
     @Override
     public <S extends CategoryEntity> S save(S entity) {
-        return null;
+        return categoryRepository.save(entity);
     }
 
     @Override

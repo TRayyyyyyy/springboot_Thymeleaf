@@ -1,9 +1,11 @@
 package vt01.demo_thy.Model;
 
 import jakarta.persistence.Id;
+import jakarta.persistence.metamodel.StaticMetamodel;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+
 
 @AllArgsConstructor
 @Data
